@@ -20,7 +20,20 @@ namespace FoodStock01.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+
+            //指定したファイルのパスを取得する。
+            var dbPath = GetLocalFilePath("culculate.db3");
+
+            //この段階ではまだエラーになる。
+            LoadApplication(new App(dbPath));
+        }
+
+        public static string GetLocalFilePath(string filename)
+        {
+            //指定されたファイルのパスを取得する。なければ作成してそのパスを返却する。
+            var path = System.IO.Path.Combine(docFolder, "..", "Library", "Databases");
+
+            return System.IO.Path.Combine(path, filename);
         }
     }
 }
