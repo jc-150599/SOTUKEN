@@ -87,6 +87,7 @@ namespace FoodStock01
             }
         }
 
+
         /********************デリートメソッド*************************************/
         public static void DeleteFood(int f_no)
         {
