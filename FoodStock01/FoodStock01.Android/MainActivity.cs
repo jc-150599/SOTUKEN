@@ -22,7 +22,9 @@ namespace FoodStock01.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             //指定したファイルのパスを取得する。
-            var dbPath = GetLocalFilePath("culculate.db3");
+            var dbPath = GetLocalFilePath("sqlitetest.db3");
+
+
 
             //この段階ではまだエラーになる。
             LoadApplication(new App(dbPath));
@@ -31,7 +33,9 @@ namespace FoodStock01.Droid
         public static string GetLocalFilePath(string filename)
         {
             //指定されたファイルのパスを取得する。なければ作成してそのパスを返却する。
-            var path = System.IO.Path.Combine(docFolder, "..", "Library", "Databases");
+            var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+
+
 
             return System.IO.Path.Combine(path, filename);
         }
