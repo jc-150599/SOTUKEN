@@ -21,6 +21,7 @@ namespace FoodStock01.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+
             //指定したファイルのパスを取得する。
             var dbPath = GetLocalFilePath("sqlitetest.db3");
 
